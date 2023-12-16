@@ -1,3 +1,4 @@
+<!-- Updated templates/index.html content -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +15,10 @@
         <button type="submit">Add</button>
     </form>
     <ul>
-        {% for index, task in enumerate(todo_list) %}
+        {% for task in todo_list %}
             <li>
                 {{ task }}
-                <a href="{{ url_for('delete', index=index) }}">Delete</a>
+                <a href="{{ url_for('delete', index=loop.index0) }}">Delete</a>
             </li>
         {% endfor %}
     </ul>
